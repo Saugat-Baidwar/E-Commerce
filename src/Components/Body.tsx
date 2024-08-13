@@ -1,4 +1,6 @@
 import bodyData from "../Data/bodyData";
+import Carousel2 from "./Carousel2";
+import DataFetching from "./dataFetching";
 
 function Body() {
   return (
@@ -17,6 +19,21 @@ function Body() {
         <p className="text-[#FF3269] text-2xl font-semibold flex justify-end">
           View all Categories
         </p>
+        <hr className="h-px my-8 bg-black text-2xl  border-4 dark:bg-black" />
+        <p className="text-2xl font-semibold flex justify-end mt-4">
+          {" "}
+          <button className="bg-[#FF3269] text-white  rounded-[10px]">
+            ADD NEW PRODUCT{" "}
+          </button>
+        </p>
+
+        <div>
+          <DataFetching />
+        </div>
+        <div>
+          <img src="/categoryimg.png" alt="" />
+        </div>
+        <Carousel2 />
       </div>
     </>
   );

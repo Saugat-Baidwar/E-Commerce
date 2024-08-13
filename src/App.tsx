@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar";
 import Carousl from "./Components/Carousel";
 import Body from "./Components/Body";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Carousl />
       <Body />
+      <Footer />
     </>
   );
 }
