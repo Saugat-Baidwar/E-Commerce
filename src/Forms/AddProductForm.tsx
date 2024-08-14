@@ -79,7 +79,7 @@ const AddProductForm = () => {
         <Form>
           <div className="p-4">
             <div>
-              <label className="text-md font-semibold text-black">Title</label>
+              <label className="text-md font-semibold text-white">Title</label>
               <Field
                 type="text"
                 name="title"
@@ -92,7 +92,7 @@ const AddProductForm = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-md font-semibold text-black">Price</label>
+              <label className="text-md font-semibold text-white">Price</label>
               <Field
                 type="text"
                 name="price"
@@ -105,7 +105,7 @@ const AddProductForm = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-md font-semibold text-black">
+              <label className="text-md font-semibold text-white">
                 Description
               </label>
               <Field
@@ -120,7 +120,7 @@ const AddProductForm = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-md font-semibold text-black">Image</label>
+              <label className="text-md font-semibold text-white">Image</label>
               <Field
                 type="text"
                 name="image"
@@ -133,7 +133,7 @@ const AddProductForm = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-md font-semibold text-black">
+              <label className="text-md font-semibold text-white">
                 Category
               </label>
               <Field

@@ -2,15 +2,20 @@ import { useQuery } from "@tanstack/react-query";
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { useCartStore } from "../store/cart";
+import { useState } from "react";
+import Modal from "./Modal";
 
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   image: string;
-// }
+type TProduct = {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+  category: string;
+  price: number;
+};
 
 function Card() {
+  const [openEditModal, setOpenEditModal] = useState(false);
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
   const { data, isLoading, isError } = useQuery({
     queryFn: async () => {
@@ -73,11 +78,14 @@ function Card() {
     // </div>
     <>
       <div className="grid grid-cols-6 mt-10  ">
-        {data.map((items) => (
+        {data.map((items: TProduct) => (
           <ul className="w-[193.33px] h-[337.33px]" key={items.id}>
             <p className="flex  justify-end ">
               <p>
-                <MdModeEdit />
+                <MdModeEdit onClick={() => setOpenEditModal(true)} />
+                {openEditModal && (
+                  <Modal onClose={() => setOpenEditModal(false)} />
+                )}
                 <MdDelete />
               </p>
             </p>
