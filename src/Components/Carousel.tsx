@@ -18,14 +18,18 @@ const Carousl: React.FC = () => (
     </div>
     <div>
       <h3 style={contentStyle}>
-        <img src="Cimage2.png" alt="" />
+        <img src="/Component22.png" alt="" />
       </h3>
     </div>
     <div>
-      <h3 style={contentStyle}>3</h3>
+      <h3 style={contentStyle}>
+        <img src="/Cimage2.png" alt="" />
+      </h3>
     </div>
     <div>
-      <h3 style={contentStyle}>4</h3>
+      <h3 style={contentStyle}>
+        <img src="/Component22.png" alt="" />
+      </h3>
     </div>
   </Carousel>
 );
