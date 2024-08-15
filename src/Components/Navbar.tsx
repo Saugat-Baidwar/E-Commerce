@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="bg-[#100F44] w-[1512] h-[107px] text-white flex justify-center items-center gap-10">
+      <div className="bg-[#100F44] sticky top-0  w-[1512] h-auto text-white flex justify-center items-center gap-10">
         <div>
           <img src="logo.png" alt="logo img" />
         </div>

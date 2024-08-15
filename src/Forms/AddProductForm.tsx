@@ -23,7 +23,8 @@ const addProductFormSchema = object({
 });
 
 // Function to add product
-const addProduct = async (product) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const addProduct = async (product: any) => {
   const response = await fetch("https://fakestoreapi.com/products", {
     method: "POST",
     headers: {

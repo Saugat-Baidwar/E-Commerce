@@ -9,6 +9,7 @@
 import Navbar from "./Components/Navbar";
 import Carousl from "./Components/Carousel";
 import Body from "./Components/Body";
+import Footer from "./Components/Footer";
 
 // import Modal from "./Components/Modal";
 // import AddProductForm from "./Forms/AddProductForm";
@@ -31,6 +32,7 @@ function App() {
       <Navbar />
       <Carousl />
       <Body />
+      <Footer />
       {/* <div className="h-screen flex flex-col items-center gap-6 bg-[#14161b] text-white">
       
         <button

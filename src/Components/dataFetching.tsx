@@ -12,10 +12,27 @@ type TProduct = {
   description: string;
   category: string;
   price: number;
+  rating: {
+    rate: number;
+  };
 };
 
 function Card() {
   const [openEditModal, setOpenEditModal] = useState(false);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch("https://fakestoreapi.com/products");
+  //     if (!response.ok) {
+  //       console.log("Unable to fetch products");
+  //       return;
+  //     }
+
+  //     const data = await response.json();
+
+  //     setProducts(data);
+  //   };
+  //   fetchData();
+  // }, []);
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
   const { data, isLoading, isError } = useQuery({
     queryFn: async () => {
@@ -57,6 +74,17 @@ function Card() {
   // const handleCartIncrease = () => {
   //   increaseQuantity();
   // };
+  const handleDelete = async (id: number) => {
+    const deleteApi = await fetch(`https://fakestoreapi.com/products/${id}`, {
+      method: "DELETE",
+    });
+
+    if (deleteApi.ok) {
+      console.log(`Successfully delete id: ${id}`);
+    } else {
+      console.log("Failed to delete item");
+    }
+  };
 
   return (
     // <div className="grid grid-cols-3 gap-2  m-4  ">
@@ -86,7 +114,7 @@ function Card() {
                 {openEditModal && (
                   <Modal onClose={() => setOpenEditModal(false)} />
                 )}
-                <MdDelete />
+                <MdDelete onClick={() => handleDelete(items.id)} />
               </p>
             </p>
             <img
@@ -95,16 +123,15 @@ function Card() {
               alt={items.title}
             />
 
-            <h2 className="font-semibold line-clamp-1">{items.title}</h2>
-            <h2>{items.price}</h2>
+            <h2 className="font-bold line-clamp-1">{items.title}</h2>
 
-            <h2 className=" h-[100px] overflow-auto bg-slate-600">
-              {items.description}
-            </h2>
+            <h2 className=" h-[100px] overflow-auto ">{items.description}</h2>
+            <h2 className="font-semibold">Price:${items.price}</h2>
+            <h2 className="font-bold">{items.rating.rate}</h2>
 
             <button
               onClick={() => increaseQuantity()}
-              className="text-pink-600 border-solid border-2 border-pink-800 rounded-[10px] w-[141px] mt-1 ml-3 hover:bg-green-500 hover:text-black"
+              className="text-pink-600 border-solid border-2 border-pink-800 rounded-[10px] w-[141px] mt-1 ml-3 hover:bg-[#100F44] hover:text-[#EE8F00]"
             >
               Add to Cart
             </button>

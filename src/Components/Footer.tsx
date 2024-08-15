@@ -30,13 +30,16 @@ function Footer() {
         </div>
         <div>
           <h1>Connect with us</h1>
-          <input className="rounded-[11.2px] h-[40px] w-[250px]" type="text" />
-          <div className="flex mt-2 gap-4 ">
-            <FaYoutube />
-            <FaFacebook />
-            <IoLogoInstagram />
-            <FaLinkedin />
-            <FaXTwitter />
+          <input
+            className="rounded-[11.2px] h-[40px] w-[250px] text-black "
+            type="text"
+          />
+          <div className="flex mt-4 gap-4  ">
+            <FaYoutube className=" hover:bg-slate-500 blur-3 rounded-md " />
+            <FaFacebook className="hover:bg-slate-500 blur-3" />
+            <IoLogoInstagram className="hover:bg-slate-500 blur-3" />
+            <FaLinkedin className="hover:bg-slate-500 blur-3" />
+            <FaXTwitter className="hover:bg-slate-500 blur-3" />
           </div>
           <p className="mt-2">
             © Copyright 2024 Electrical <br /> Solution. All rights <br />
